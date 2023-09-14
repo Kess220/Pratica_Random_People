@@ -1,0 +1,14 @@
+# Arquivos de compilação TypeScript
+dist/
+
+# Módulos Node.js
+node_modules/
+
+# Arquivos de ambiente
+.env
+
+# Outros arquivos gerados ou temporários
+*.log
+*.lock
+*.swp
+*.swo
