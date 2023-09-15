@@ -3,6 +3,6 @@ import { getPersonController } from "../controller/PersonController";
 
 const router: Router = express.Router();
 
-router.get("/person/:id", getPersonController); 
+router.get("/person", getPersonController); 
 
 export default router;

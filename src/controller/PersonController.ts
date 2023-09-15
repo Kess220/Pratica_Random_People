@@ -1,16 +1,17 @@
 import { Request, Response } from "express";
 import { QueryResult } from "pg";
-import { getPersonById } from "../repositories/PesonRepository";
+import { getRandomPerson } from "../repositories/PesonRepository";
 
 export const getPersonController = async (req: Request, res: Response) => {
   try {
-    const id: number = parseInt(req.params.id, 10);
-    const result: QueryResult = await getPersonById(id);
+    // Consulte o banco de dados para buscar uma pessoa aleatória
+    const result: QueryResult = await getRandomPerson();
 
     if (result.rows.length === 0) {
       return res.status(404).json({ message: "Pessoa não encontrada" });
     }
 
+    // Retorne os dados da pessoa aleatória encontrada
     const person: any = result.rows[0];
 
     return res.status(200).json(person);
